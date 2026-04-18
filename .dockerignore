@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.git
+.idea/
+.vscode/
+ble_position_model.h5
+converter.py

@@ -18,9 +18,6 @@ __pycache__/
 # SavedModel folder (TensorFlow export)
 saved_model/
 
-# Docker files
-Dockerfile
-.dockerignore
 
 # converter script
 converter.py

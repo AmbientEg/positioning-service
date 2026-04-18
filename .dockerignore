@@ -7,3 +7,4 @@ __pycache__/
 .vscode/
 ble_position_model.h5
 converter.py
+saved_model/

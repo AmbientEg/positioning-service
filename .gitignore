@@ -11,3 +11,16 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
+
+# TensorFlow model (old format)
+*.h5
+
+# SavedModel folder (TensorFlow export)
+saved_model/
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# converter script
+converter.py

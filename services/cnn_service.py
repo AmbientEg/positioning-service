@@ -3,10 +3,13 @@ import numpy as np
 
 class CNNService:
     def __init__(self, loader):
-        self.model = loader.model
+        self.model = loader.session  # ONNX session
         self.mean = loader.mean
         self.std = loader.std
         self.class_to_label = loader.class_to_label
+
+        # get input name once (important for ONNX)
+        self.input_name = self.model.get_inputs()[0].name
 
     def _normalize(self, window):
         return (window - self.mean) / self.std
@@ -32,9 +35,10 @@ class CNNService:
 
                 X = window.reshape(1, 5, window_size, 1).astype("float32")
 
-                pred = self.model.predict(X, verbose=0)
-                pred_class = int(np.argmax(pred))
+                # ONNX inference (replaces model.predict)
+                pred = self.model.run(None, {self.input_name: X})[0]
 
+                pred_class = int(np.argmax(pred))
                 predictions.append(pred_class)
 
             if not predictions:

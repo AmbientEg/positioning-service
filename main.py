@@ -15,7 +15,7 @@ app = FastAPI(title="Positioning Service")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 Loader = ModelLoader(
-    model_path=os.path.join(BASE_DIR, "DeepLearningModel", "ble_position_model.h5"),
+    model_path=os.path.join(BASE_DIR, "DeepLearningModel", "ble_position_model.onnx"),
     scaler_path=os.path.join(BASE_DIR, "DeepLearningModel", "scaler.pkl"),
     mapping_path=os.path.join(BASE_DIR, "DeepLearningModel", "label_mapping.pkl"),
 )

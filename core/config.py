@@ -5,9 +5,7 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-if not DATABASE_URL:
-    raise ValueError("DATABASE_URL is not set in .env")
-
+if not DATABASE_URL: raise ValueError("DATABASE_URL is not set in .env")
 
 DEFAULT_BUILDING_NAME = "Special Building"
 DEFAULT_BUILDING_DESCRIPTION = (

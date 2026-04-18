@@ -1,11 +1,12 @@
-import tensorflow as tf
+import onnxruntime as ort
 import pickle
 
 
 class ModelLoader:
     def __init__(self, model_path, scaler_path, mapping_path):
-        # load model
-        self.model = tf.keras.models.load_model(model_path)
+
+        # load ONNX model
+        self.session = ort.InferenceSession(model_path)
 
         # load scaler
         with open(scaler_path, "rb") as f:

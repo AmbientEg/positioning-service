@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "b0887727-9cc5-4cca-8484-3eb23a7e30ed",
+    "name": "Positioning Service API",
+    "description": "Collection for testing the positioning service endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46742383",
+    "_collection_link": "https://go.postman.co/collection/46742383-b0887727-9cc5-4cca-8484-3eb23a7e30ed?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Service",
+      "item": [
+        {
+          "name": "Root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "Returns service metadata and key endpoint paths."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health (Alias)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            },
+            "description": "Alias to readiness endpoint."
+          },
+          "response": []
+        },
+        {
+          "name": "Liveness",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health/live",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health",
+                "live"
+              ]
+            },
+            "description": "Liveness probe endpoint."
+          },
+          "response": []
+        },
+        {
+          "name": "Readiness",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health/ready",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health",
+                "ready"
+              ]
+            },
+            "description": "Readiness probe endpoint with dependency checks."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Grid Operations",
+      "item": [
+        {
+          "name": "Get Coordinates From Grid Label",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"grid_label\": \"A1\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/h",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "h"
+              ]
+            },
+            "description": "Looks up latitude and longitude for a grid label."
+          },
+          "response": []
+        },
+        {
+          "name": "Import GeoJSON Gridpoints",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "GeoJSON file containing grid points to import.",
+                  "src": "./samples/gridpoints.geojson"
+                }
+              ]
+            },
+            "url": {
+              "raw": ""
+            },
+            "description": "Imports gridpoints from a GeoJSON file using multipart/form-data."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prediction",
+      "item": [
+        {
+          "name": "Predict Grid From RSSI Files",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "type": "file",
+                  "description": "Beacon RSSI sample file 1.",
+                  "src": "./samples/beacon-1.csv"
+                },
+                {
+                  "key": "files",
+                  "type": "file",
+                  "description": "Beacon RSSI sample file 2.",
+                  "src": "./samples/beacon-2.csv"
+                },
+                {
+                  "key": "files",
+                  "type": "file",
+                  "description": "Beacon RSSI sample file 3.",
+                  "src": "./samples/beacon-3.csv"
+                },
+                {
+                  "key": "files",
+                  "type": "file",
+                  "description": "Beacon RSSI sample file 4.",
+                  "src": "./samples/beacon-4.csv"
+                },
+                {
+                  "key": "files",
+                  "type": "file",
+                  "description": "Beacon RSSI sample file 5.",
+                  "src": "./samples/beacon-5.csv"
+                }
+              ]
+            },
+            "url": {
+              "raw": ""
+            },
+            "description": "Submits exactly 5 beacon files for grid prediction."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ]
+}

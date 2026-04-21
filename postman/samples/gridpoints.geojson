@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "A1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.0001, 31.0001]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "A2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.0002, 31.0002]
+      }
+    }
+  ]
+}

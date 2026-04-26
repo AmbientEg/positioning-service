@@ -220,9 +220,6 @@ Manages CNN model inference:
 
 ## Deep Learning Model
 
-<img width="1039" height="327" alt="gridpoints" src="https://github.com/user-attachments/assets/e62138fd-8043-493d-bbbe-3688bda07a7b" />
-
-
 **Model Type**: Convolutional Neural Network (CNN)
 
 **Input**: RSSI matrix (5 beacons × 20 time windows × 1 channel) = shape (5, 20, 1)
@@ -230,6 +227,8 @@ Manages CNN model inference:
 **Output**: Predicted gridpoint label (102 classes)
 
 **Training Data**: 102 gridpoints with 1-3 meter accuracy
+
+<img width="1039" height="327" alt="gridpoints" src="https://github.com/user-attachments/assets/e62138fd-8043-493d-bbbe-3688bda07a7b" />
 
 **Files**:
 - `ble_position_model.h5`: Keras/TensorFlow model

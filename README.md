@@ -220,6 +220,9 @@ Manages CNN model inference:
 
 ## Deep Learning Model
 
+[GRID3.pdf](https://github.com/user-attachments/files/27104879/GRID3.pdf)
+
+
 **Model Type**: Convolutional Neural Network (CNN)
 
 **Input**: RSSI matrix (5 beacons × 20 time windows × 1 channel) = shape (5, 20, 1)
@@ -234,6 +237,8 @@ Manages CNN model inference:
 - `saved_model/`: TensorFlow saved model format
 
 ### CNN Architecture
+
+<img width="7170" height="2970" alt="CNN_Architecture_Visual(1)" src="https://github.com/user-attachments/assets/b95172cb-d78b-4a24-8455-c6718305a415" />
 
 The model uses a sequential architecture optimized for RSSI-based positioning:
 

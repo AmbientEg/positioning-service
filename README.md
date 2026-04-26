@@ -220,7 +220,7 @@ Manages CNN model inference:
 
 ## Deep Learning Model
 
-[GRID3.pdf](https://github.com/user-attachments/files/27104879/GRID3.pdf)
+<img width="1039" height="327" alt="gridpoints" src="https://github.com/user-attachments/assets/e62138fd-8043-493d-bbbe-3688bda07a7b" />
 
 
 **Model Type**: Convolutional Neural Network (CNN)
